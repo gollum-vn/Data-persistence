@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.IO;
 
 public class MainManager : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class MainManager : MonoBehaviour
     private bool m_Started = false;
     private int m_Points;
     private int bestScore = 0;
+    private string playerName = NameManager.Instance.playerName;
     
     private bool m_GameOver = false;
 
@@ -59,30 +61,26 @@ public class MainManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene(1);
             }
         }
     }
-    public void NewNameSelected(string text)
-    {
-        NameManager.Instance.PlayerName = text;
-    }
-
     void AddPoint(int point)
     {
         m_Points += point;
         ScoreText.text = $"Score : {m_Points}";
-        if(bestScore < m_Points)
+        if(NameManager.Instance.bestScore < m_Points)
         {
-            bestScore = m_Points;
+            NameManager.Instance.bestScore = m_Points;
         }
-        BestScoreText.text = $"Best Score : {NameManager.Instance.PlayerName} {bestScore}";
-        Debug.Log(NameManager.Instance.PlayerName);
+        
     }
     public void GameOver()
     {
         m_GameOver = true;
         GameOverText.SetActive(true);
+        BestScoreText.text = $"Best Score : {NameManager.Instance.playerName} : {NameManager.Instance.bestScore}";
+        NameManager.Instance.Save();
     }
     
 }

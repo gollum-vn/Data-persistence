@@ -9,9 +9,12 @@ using UnityEditor;
 
 public class MenuManager : MonoBehaviour
 {
-    
+    public Text bestScoreText;
     // Start is called before the first frame update
-    
+    void Awake()
+    {
+        bestScoreText.text = $"Best Score: {NameManager.Instance.playerName} : {NameManager.Instance.bestScore}";
+    }
     // Update is called once per frame
     void Update()
     {
