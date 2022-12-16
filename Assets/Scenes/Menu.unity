@@ -396,7 +396,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 981858494}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnDeselect:
     m_PersistentCalls:
       m_Calls: []
@@ -891,7 +903,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a80a94ce5d4e341489e1ff3dd8eb0f7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerName: 
+  playerName: 
+  bestScore: 0
 --- !u!1 &717502097
 GameObject:
   m_ObjectHideFlags: 0
@@ -1235,6 +1248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 339e1c362827b304da784e4e7d0179c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bestScoreText: {fileID: 1102110428}
 --- !u!1 &983866676
 GameObject:
   m_ObjectHideFlags: 0
@@ -1346,12 +1360,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 24
+    m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
